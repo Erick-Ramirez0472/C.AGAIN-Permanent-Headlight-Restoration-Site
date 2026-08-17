@@ -38,10 +38,27 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+const photosInput = document.getElementById("photosInput");
+const photosHint = document.getElementById("photosHint");
+const MAX_PHOTOS = 5;
+
+photosInput.addEventListener("change", () => {
+  const files = Array.from(photosInput.files);
+  if (files.length > MAX_PHOTOS) {
+    photosHint.textContent = `Please select up to ${MAX_PHOTOS} photos (you selected ${files.length}).`;
+    photosHint.style.color = "#e2836b";
+    return;
+  }
+  photosHint.style.color = "";
+  photosHint.textContent = files.length
+    ? `${files.length} photo${files.length > 1 ? "s" : ""} selected: ${files.map((f) => f.name).join(", ")}`
+    : "No files selected";
+});
+
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const note = document.getElementById("formNote");
   note.textContent =
-    "Thanks! (Demo only — connect this form to an email/service backend to actually receive submissions.)";
+    "Thanks! (Demo only — connect this form to a file-upload-capable backend to actually receive submissions and photos.)";
 });

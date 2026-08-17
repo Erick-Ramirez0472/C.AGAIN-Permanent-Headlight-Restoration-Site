@@ -162,7 +162,7 @@
           <li><strong>Hours:</strong> [Mon–Sat, 8am–6pm]</li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" method="post" enctype="multipart/form-data">
         <label>
           Name
           <input type="text" name="name" required>
@@ -176,11 +176,16 @@
           <input type="text" name="vehicle">
         </label>
         <label>
+          Photos of your headlights (up to 5)
+          <input type="file" name="photos" id="photosInput" accept="image/*" multiple>
+          <span class="file-hint" id="photosHint">No files selected</span>
+        </label>
+        <label>
           Message
           <textarea name="message" rows="4"></textarea>
         </label>
         <button type="submit" class="btn btn-primary">Request Quote</button>
-        <p class="form-note" id="formNote">This form doesn't send anywhere yet — connect it to your email or a form service (e.g. Formspree) before launch.</p>
+        <p class="form-note" id="formNote">This form doesn't send anywhere yet — connect it to a backend that supports file uploads (e.g. Formspree on a paid plan, or Web3Forms) before launch, so photo attachments actually come through.</p>
       </form>
     </div>
   </section>
