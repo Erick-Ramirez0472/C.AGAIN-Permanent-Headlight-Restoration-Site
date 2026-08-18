@@ -141,44 +141,23 @@
   <section class="gallery" id="gallery">
     <div class="container">
       <h2>Before &amp; After</h2>
-      <p class="section-lead">Real results from real vehicles.</p>
+      <p class="section-lead">Real results from real vehicles. Tap a photo to swap between before and after.</p>
       <div class="grid grid-3 gallery-grid">
-        <div class="gallery-item">
-          <div class="gallery-pair">
-            <figure>
-              <img src="assets/images/gallery/pair1-before.jpg" alt="Cloudy, oxidized headlight before restoration" loading="lazy">
-              <figcaption>Before</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/gallery/pair1-after.jpg" alt="Clear, restored headlight after C.AGAIN treatment" loading="lazy">
-              <figcaption>After</figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-pair">
-            <figure>
-              <img src="assets/images/gallery/pair2-before.jpg" alt="Foggy, yellowed headlight before restoration" loading="lazy">
-              <figcaption>Before</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/gallery/pair2-after.jpg" alt="Clear, restored headlight after C.AGAIN treatment" loading="lazy">
-              <figcaption>After</figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-pair">
-            <figure>
-              <img src="assets/images/gallery/pair3-before.jpg" alt="Hazy headlight before restoration" loading="lazy">
-              <figcaption>Before</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/gallery/pair3-after.jpg" alt="Clear, restored headlight after C.AGAIN treatment" loading="lazy">
-              <figcaption>After</figcaption>
-            </figure>
-          </div>
-        </div>
+        <button type="button" class="swap-frame" data-swap>
+          <img src="assets/images/gallery/pair1-before.jpg" alt="Cloudy, oxidized headlight before restoration" class="swap-img is-active" data-state="before" loading="lazy">
+          <img src="assets/images/gallery/pair1-after.jpg" alt="Clear, restored headlight after C.AGAIN treatment" class="swap-img" data-state="after" loading="lazy">
+          <span class="swap-badge">Before</span>
+        </button>
+        <button type="button" class="swap-frame" data-swap>
+          <img src="assets/images/gallery/pair2-before.jpg" alt="Foggy, yellowed headlight before restoration" class="swap-img is-active" data-state="before" loading="lazy">
+          <img src="assets/images/gallery/pair2-after.jpg" alt="Clear, restored headlight after C.AGAIN treatment" class="swap-img" data-state="after" loading="lazy">
+          <span class="swap-badge">Before</span>
+        </button>
+        <button type="button" class="swap-frame" data-swap>
+          <img src="assets/images/gallery/pair3-before.jpg" alt="Hazy headlight before restoration" class="swap-img is-active" data-state="before" loading="lazy">
+          <img src="assets/images/gallery/pair3-after.jpg" alt="Clear, restored headlight after C.AGAIN treatment" class="swap-img" data-state="after" loading="lazy">
+          <span class="swap-badge">Before</span>
+        </button>
       </div>
     </div>
   </section>

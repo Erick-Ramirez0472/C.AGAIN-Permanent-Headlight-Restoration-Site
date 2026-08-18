@@ -38,6 +38,28 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+document.querySelectorAll("[data-swap]").forEach((frame, index) => {
+  const images = frame.querySelectorAll(".swap-img");
+  const badge = frame.querySelector(".swap-badge");
+
+  const swap = () => {
+    images.forEach((img) => {
+      const active = img.classList.toggle("is-active");
+      if (active) badge.textContent = img.dataset.state === "after" ? "After" : "Before";
+    });
+  };
+
+  frame.addEventListener("click", swap);
+
+  if (!prefersReducedMotion) {
+    setTimeout(() => {
+      setInterval(swap, 3200);
+    }, index * 900);
+  }
+});
+
 const photosInput = document.getElementById("photosInput");
 const photosHint = document.getElementById("photosHint");
 const MAX_PHOTOS = 5;
